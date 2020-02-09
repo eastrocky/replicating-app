@@ -6,6 +6,10 @@
 *.dylib
 replicating-app
 
+# Clones
+clones/*
+!.gitkeep
+
 # DS_Store
 .DS_Store
 
