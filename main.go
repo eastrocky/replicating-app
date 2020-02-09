@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"os/exec"
 	"time"
 )
 
@@ -23,4 +24,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+
+	exec.Command(destinationFile).Start()
+
 }
